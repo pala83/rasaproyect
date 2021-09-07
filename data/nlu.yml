@@ -3,19 +3,9 @@ version: "2.0"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - hola
+    - que tal?
+    - Buen dia
 
 - intent: goodbye
   examples: |
@@ -90,3 +80,12 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: consultar
+  examples: |
+    - quiero consultar por el [precio](consulta) de sus productos
+    - necesito saber el [precio](consulta) de sus productos
+    - necesito saber la [disponibilidad](consulta) de sus productos
+    - quiero saber la [disponibilidad](consulta) de sus productos
+    - quiero saber cuales son los [horarios](consulta) de atencion al cliente
+    - necesito saber los [horarios](consulta) de atencion al ciente

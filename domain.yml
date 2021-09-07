@@ -1,5 +1,8 @@
 version: "2.0"
 
+entities:
+  - consulta
+  
 intents:
   - greet
   - goodbye
@@ -8,6 +11,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - consultar
 
 responses:
   utter_greet:
@@ -28,6 +32,9 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+actions:
+  - action_consultar
 
 session_config:
   session_expiration_time: 60
