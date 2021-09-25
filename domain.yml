@@ -6,35 +6,60 @@ entities:
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
   - consultar
+  - login
+  - login_req
+  - register
+  - pedidos
+
+forms:
+  login_form:
+    usuario:
+      - type: from_text
+    contr:
+      - type: from_text
+
+  reg_form:
+    usuario:
+      - type: from_text
+    contr:
+      - type: from_text
+
+
+
+slots:
+  usuario:
+    type: text
+  contr:
+    type: text
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Hola, soy el asistente automatizado de Jaguar S.A\nEn que puedo ayudar?"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Adios, {usuario}, espero haberte ayudado :)"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_ask_usuario:
+  - text: "Cual es tu usuario?"
+
+  utter_ask_contr:
+  - text: "Cual es tu contrasena?"
+
+  utter_loggeado: 
+  - text: "Bienvenido/a, {usuario}, espero poder ayudarte."
+
+  utter_loggeado2:
+  - text: "Has iniciado sesion como {usuario}"
+
+  utter_pedidos:
+    - text: "Que le gustaria comprar?"
 
 actions:
   - action_consultar
+  - validate_login_form
+  - validate_reg_form
+
 
 session_config:
   session_expiration_time: 60

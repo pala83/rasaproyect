@@ -2,12 +2,18 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Chau chau
+  condition:
+    - slot_was_set:
+      - usuario: true
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: ya he iniciado sesion?
+  condition:
+    - slot_was_set:
+      - usuario: true
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: login_req
+  - action: utter_loggeado2

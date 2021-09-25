@@ -2,36 +2,42 @@ version: "2.0"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
 - story: consultar_path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: consultar
   - action: action_consultar
+
+- story: login_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: login
+  - action: login_form
+  - active_loop: login_form
+  - slot_was_set:
+    - requested_slot: usuario
+  - slot_was_set:
+    - requested_slot: contr
+  - action: utter_loggeado
+
+- story: pedidos_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pedidos
+  - action: utter_pedidos
+
+- story: reg_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: register
+  - action: reg_form
+  - active_loop: reg_form
+  - slot_was_set:
+    - requested_slot: usuario
+  - slot_was_set:
+    - requested_slot: contr
+  - action: utter_loggeado

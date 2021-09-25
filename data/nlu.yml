@@ -5,81 +5,18 @@ nlu:
   examples: |
     - hola
     - que tal?
-    - Buen dia
+    - buen dia
+    - hi
 
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
+    - adios
+    - muchas gracias
+    - gracias
+    - nos vemos
+    - eso es todo
+    - chau
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
 
 - intent: consultar
   examples: |
@@ -89,3 +26,26 @@ nlu:
     - quiero saber la [disponibilidad](consulta) de sus productos
     - quiero saber cuales son los [horarios](consulta) de atencion al cliente
     - necesito saber los [horarios](consulta) de atencion al ciente
+
+- intent: login
+  examples: |
+    - quiero iniciar sesion en mi cuenta
+    - me gustaria iniciar sesion en mi cuenta
+    - puedo iniciar sesion en mi cuenta?
+    - iniciar sesion
+
+- intent: login_req
+  examples: |
+    - cual es mi usuario?
+    - con que usuario he iniciado sesion?
+
+- intent: pedidos
+  examples: |
+    - me gustaria realizar un pedido
+    - como realizo un pedido
+    - puedo realizar un pedido?
+  
+- intent: register
+  examples: |
+    - quiero registrar mi cuenta
+    - quiero registrarme
