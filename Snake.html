@@ -1,0 +1,69 @@
+<canvas id="pantalla" width="400" height="400"></canvas>
+<script>
+window.onload=function() {
+    pant=document.getElementById("pantalla");
+    ctx=pant.getContext("2d");
+    document.addEventListener("keydown",teclaApretada);
+    setInterval(juego,1000/15);
+}
+posicion_x=posicion_y=10;
+tamaño=contador=20;
+manzana_x=manzana_y=15;
+velocidad_x=velocidad_y=0;
+camino=[];
+cola=5;
+function juego() {
+    posicion_x+=velocidad_x;
+    posicion_y+=velocidad_y;
+    if(posicion_x<0) {
+        posicion_x= contador-1;
+    }
+    if(posicion_x>contador-1) {
+        posicion_x= 0;
+    }
+    if(posicion_y<0) {
+        posicion_y= contador-1;
+    }
+    if(posicion_y>contador-1) {
+        posicion_y= 0;
+    }
+    ctx.fillStyle="black";
+    ctx.fillRect(0,0,pant.width,pant.height);
+ 
+    ctx.fillStyle="lime";
+    for(var i=0;i<camino.length;i++) {
+        ctx.fillRect(camino[i].x*tamaño,camino[i].y*tamaño,tamaño-2,tamaño-2);
+        if(camino[i].x==posicion_x && camino[i].y==posicion_y) {
+            cola = 5;
+        }
+    }
+    camino.push({x:posicion_x,y:posicion_y});
+    while(camino.length>cola) {
+        camino.shift();
+    }
+ 
+    if(manzana_x==posicion_x && manzana_y==posicion_y) {
+        cola++;
+        manzana_x=Math.floor(Math.random()*contador);
+        manzana_y=Math.floor(Math.random()*contador);
+    }
+    ctx.fillStyle="red";
+    ctx.fillRect(manzana_x*tamaño,manzana_y*tamaño,tamaño-2,tamaño-2);
+}
+function teclaApretada(evento) {
+    switch(evento.keyCode) {
+        case 37:
+            velocidad_x=-1;velocidad_y=0;
+            break;
+        case 38:
+            velocidad_x=0;velocidad_y=-1;
+            break;
+        case 39:
+            velocidad_x=1;velocidad_y=0;
+            break;
+        case 40:
+            velocidad_x=0;velocidad_y=1;
+            break;
+    }
+}
+</script>
