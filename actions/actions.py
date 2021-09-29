@@ -52,10 +52,10 @@ class ValidateLoginForm(FormValidationAction):
         with open('RegAcc.txt', 'r') as acc:
             line = acc.readlines()
             i = 0
-            while i != len(line) and line[i].rstrip('\n') != str(slot_value):
+            while i <= (len(line)-1) and line[i].rstrip('\n') != str(slot_value):
                 i = i+2 #Los usuarios se encuentran
                         #en las lineas par del archivo
-            if i != len(line) and slot_value == line[i].rstrip('\n'):
+            if i <= (len(line)-1) and slot_value == line[i].rstrip('\n'):
                 return {"usuario": slot_value}
             else:
                 dispatcher.utter_message(text=f"Usuario no registrado")
@@ -76,10 +76,10 @@ class ValidateLoginForm(FormValidationAction):
             user = tracker.get_slot('usuario')
             line = acc.readlines()
             i = 0
-            while i != len(line) and line[i].rstrip('\n') != user:
+            while i <= (len(line)-1) and line[i].rstrip('\n') != user:
                 i = i+2
             i = i+1 #Las contrasenas estan en las lineas inpares del archivo
-            if i != len(line) and slot_value == line[i].rstrip('\n'):
+            if i <= (len(line)-1) and slot_value == line[i].rstrip('\n'):
                 return {"contr": slot_value}
             else:
                 dispatcher.utter_message(text=f"Contrasena incorrecta")
@@ -104,10 +104,10 @@ class ValidateRegForm(FormValidationAction):
         with open('RegAcc.txt', 'r') as acc:
             line = acc.readlines()
             i = 0
-            while i != len(line) and line[i].rstrip('\n') != str(slot_value):
+            while i <= (len(line)-1) and line[i].rstrip('\n') != str(slot_value):
                 i = i+2 #Los usuarios se encuentran
                         #en las lineas par del archivo
-            if i != len(line) and slot_value == line[i].rstrip('\n'):
+            if i <= (len(line)-1) and slot_value == line[i].rstrip('\n'):
                 dispatcher.utter_message(text=f"Usuario ya registrado")
                 return {"usuario": None}
         with open('RegAcc.txt', 'a') as acc:
