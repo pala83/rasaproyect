@@ -1,0 +1,50 @@
+{
+    "cuentas": [
+        {
+            "user": "pepe",
+            "password": 12345,
+            "metodo_pago_fav": null,
+            "n_compras": 0
+        },
+        {
+            "user": "juan",
+            "password": 1234,
+            "metodo_pago_fav": "paypal",
+            "n_compras": 4
+        }
+    ],
+    "envios": [
+        {
+            "npedido": 1001,
+            "entrega": "10/10/2021"
+        },
+        {
+            "npedido": 1002,
+            "entrega": "15/12/2021"
+        },
+        {
+            "npedido": 9886,
+            "entrega": "10/10/2021"
+        },
+        {
+            "npedido": 4698,
+            "entrega": "17/10/2021"
+        },
+        {
+            "npedido": 3316,
+            "entrega": "06/10/2021"
+        },
+        {
+            "npedido": 3496,
+            "entrega": "07/10/2021"
+        },
+        {
+            "npedido": 5135,
+            "entrega": "16/10/2021"
+        },
+        {
+            "npedido": 9561,
+            "entrega": "16/10/2021"
+        }
+    ]
+}

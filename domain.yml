@@ -2,6 +2,7 @@ version: "2.0"
 
 entities:
   - consulta
+  - mpago
   
 intents:
   - greet
@@ -11,6 +12,10 @@ intents:
   - login_req
   - register
   - pedidos
+  - carrito_compra
+  - elegir_mpago
+  - afirmar
+  - negar
 
 forms:
   login_form:
@@ -25,13 +30,15 @@ forms:
     contr:
       - type: from_text
 
-
-
 slots:
   usuario:
     type: text
+    influence_conversation: true
   contr:
     type: text
+  nuevo:
+    type: bool
+    influence_conversation: true
 
 responses:
   utter_greet:
@@ -46,19 +53,29 @@ responses:
   utter_ask_contr:
   - text: "Cual es tu contrasena?"
 
-  utter_loggeado: 
-  - text: "Bienvenido/a, {usuario}, espero poder ayudarte."
-
-  utter_loggeado2:
+  utter_loggeado:
   - text: "Has iniciado sesion como {usuario}"
 
-  utter_pedidos:
-    - text: "Que le gustaria comprar?"
+  utter_pedidos_logged:
+  - text: "Que le gustaria comprar?"
+  
+  utter_respuesta:
+  - text: "Esta bien"
+
+  utter_nologgeado:
+  - text: "Parece que no has iniciado sesion. Intenta iniciar sesion o registrarte primero."
+
+  utter_nuevo_mpago:
+  - text: "Digame que metodo de pago desea utilizar para realizar la compra, por favor."
 
 actions:
   - action_consultar
   - validate_login_form
   - validate_reg_form
+  - action_metodo_pago
+  - action_efectuar_pago
+  - action_efectuar_pago2
+  - action_set_nuevo
 
 
 session_config:

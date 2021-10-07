@@ -45,7 +45,28 @@ nlu:
     - como realizo un pedido
     - puedo realizar un pedido?
   
+- intent: carrito_compra
+  examples: |
+    - mayonesa y arroz
+    - pan y queso
+
 - intent: register
   examples: |
     - quiero registrar mi cuenta
     - quiero registrarme
+
+- intent: elegir_mpago
+  examples: |
+    - [paypal](mpago)
+    - [tarjeta de credito](mpago)
+    - [efectivo](mpago)
+
+- intent: afirmar
+  examples: |
+    - si, me parece bien
+    - bueno
+
+- intent: negar
+  examples: |
+    - no, quiero usar otro
+    - quiero usar otro

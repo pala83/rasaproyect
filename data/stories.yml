@@ -20,14 +20,59 @@ stories:
     - requested_slot: usuario
   - slot_was_set:
     - requested_slot: contr
-  - action: utter_loggeado
+  - action: action_set_nuevo
 
-- story: pedidos_path
+- story: comprar_path_logged
   steps:
   - intent: greet
   - action: utter_greet
   - intent: pedidos
-  - action: utter_pedidos
+  - slot_was_set:
+      - usuario
+  - action: utter_pedidos_logged
+  - intent: carrito_compra
+  - slot_was_set:
+    - nuevo: false
+  - action: action_metodo_pago
+  - checkpoint: check_respuesta
+
+- story: respuesta_afirmacion
+  steps:
+  - checkpoint: check_respuesta
+  - intent: afirmar
+  - action: utter_respuesta
+  - action: action_efectuar_pago2
+
+- story: respuesta_negacion
+  steps:
+  - checkpoint: check_respuesta
+  - intent: negar
+  - action: utter_nuevo_mpago
+  - intent: elegir_mpago
+  - action: action_efectuar_pago
+
+
+- story: comprar_path_logged2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pedidos
+  - slot_was_set:
+      - usuario
+  - action: utter_pedidos_logged
+  - intent: carrito_compra
+  - slot_was_set:
+    - nuevo: true
+  - action: utter_nuevo_mpago
+  - intent: elegir_mpago
+  - action: action_efectuar_pago
+
+- story: comprar_path2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pedidos
+  - action: utter_nologgeado
 
 - story: reg_path
   steps:
