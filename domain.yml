@@ -3,6 +3,8 @@ version: "2.0"
 entities:
   - consulta
   - mpago
+  - producto
+  - numero_pedido
   
 intents:
   - greet
@@ -16,29 +18,35 @@ intents:
   - elegir_mpago
   - afirmar
   - negar
+  - consultar_envio_pedido
 
 forms:
   login_form:
     usuario:
       - type: from_text
-    contr:
+    nuevo:
       - type: from_text
 
   reg_form:
     usuario:
       - type: from_text
-    contr:
+    nuevo:
       - type: from_text
 
 slots:
   usuario:
     type: text
     influence_conversation: true
-  contr:
-    type: text
   nuevo:
     type: bool
     influence_conversation: true
+  compra_aceptada:
+    type: bool
+    influence_conversation: true
+  ansioso:
+    type: float
+    min_value: 1.0
+    max_value: 5.0
 
 responses:
   utter_greet:
@@ -50,7 +58,7 @@ responses:
   utter_ask_usuario:
   - text: "Cual es tu usuario?"
 
-  utter_ask_contr:
+  utter_ask_nuevo:
   - text: "Cual es tu contrasena?"
 
   utter_loggeado:
@@ -68,14 +76,19 @@ responses:
   utter_nuevo_mpago:
   - text: "Digame que metodo de pago desea utilizar para realizar la compra, por favor."
 
+  utter_compranoaceptada:
+  - text: "La compra se cancelo, prueba comprando otros productos"
+
 actions:
   - action_consultar
+  - action_consultar_envio
   - validate_login_form
   - validate_reg_form
   - action_metodo_pago
   - action_efectuar_pago
   - action_efectuar_pago2
   - action_set_nuevo
+  - action_realizar_pedido
 
 
 session_config:

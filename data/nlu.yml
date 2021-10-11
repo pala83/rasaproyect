@@ -26,6 +26,8 @@ nlu:
     - quiero saber la [disponibilidad](consulta) de sus productos
     - quiero saber cuales son los [horarios](consulta) de atencion al cliente
     - necesito saber los [horarios](consulta) de atencion al ciente
+    - quiero ver mi [historial](consulta) de commpras
+    - necesito ver mi [historial](consulta) de compras
 
 - intent: login
   examples: |
@@ -47,8 +49,9 @@ nlu:
   
 - intent: carrito_compra
   examples: |
-    - mayonesa y arroz
-    - pan y queso
+    - quiero comprar 2 [mayonesa helmanns](producto), 3 [sopa knorr](producto)
+    - quiero comprar 1 [mayonesa helmanns](producto), 2 [sopa knorr]](producto)
+    - quiero comprar 1 [mayonesa helmanns](producto), 2 [pan](producto)
 
 - intent: register
   examples: |
@@ -70,3 +73,12 @@ nlu:
   examples: |
     - no, quiero usar otro
     - quiero usar otro
+
+- regex: mumero_pedido
+  examples: |
+    - \d{4}
+- intent: consultar_envio_pedido
+  examples: |
+    - cuando llega este pedido [3243](numero_pedido)
+    - quiero saber cuando llega el pedido [2323](numero_pedido)
+    - cuando llega el pedido [1111](numero_pedido)

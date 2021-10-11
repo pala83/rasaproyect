@@ -1,0 +1,14 @@
+{
+    "productos": [
+        {
+            "nombre": "sopa knorr",
+            "stock": 471,
+            "preciobulto": 625
+        },
+        {
+            "nombre": "mayonesa helmanns",
+            "stock": 584,
+            "preciobulto": 3160
+        }
+    ]
+}

@@ -17,3 +17,11 @@ rules:
   steps:
   - intent: login_req
   - action: utter_loggeado
+
+#- rule: compra no iniciado sesion
+#  condition:
+#    - slot_was_set:
+#      - usuario: null
+#  steps:
+#  - intent: pedidos
+#  - action: utter_nologgeado
