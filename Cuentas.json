@@ -11,8 +11,10 @@
             "user": "juan",
             "password": 12345678,
             "metodo_pago_fav": "paypal",
-            "n_compras": 3,
-            "compras": []
+            "n_compras": 4,
+            "compras": [
+                2142
+            ]
         },
         {
             "user": "antonio",
@@ -44,6 +46,24 @@
                     "precio_unidad": 150
                 }
             ]
+        },
+        {
+            "npedido": 2142,
+            "carrito": [
+                {
+                    "producto": "mayonesa helmanns",
+                    "unidades": 2,
+                    "precio_unidad": 3160
+                },
+                {
+                    "producto": "sopa knorr",
+                    "unidades": 3,
+                    "precio_unidad": 625
+                }
+            ],
+            "valor_total": 8545,
+            "entrega": "21/10/2021",
+            "cobro_envio": true
         }
     ],
     "valor_envio": 350

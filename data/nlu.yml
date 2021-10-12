@@ -1,19 +1,22 @@
 version: "2.0"
 
 nlu:
-- intent: greet
+- intent: saludar
   examples: |
     - hola
     - que tal?
     - buen dia
+    - buenas tardes
+    - buenos dias
+    - buenas noches
     - hi
 
-- intent: goodbye
+- intent: despedirse
   examples: |
     - adios
-    - muchas gracias
-    - gracias
     - nos vemos
+    - hasta luego
+    - hasta pronto
     - eso es todo
     - chau
     - bye
@@ -29,23 +32,41 @@ nlu:
     - quiero ver mi [historial](consulta) de commpras
     - necesito ver mi [historial](consulta) de compras
 
-- intent: login
+- intent: loguearse
   examples: |
     - quiero iniciar sesion en mi cuenta
     - me gustaria iniciar sesion en mi cuenta
     - puedo iniciar sesion en mi cuenta?
     - iniciar sesion
+    - quiero loguearme
+    - loguear mi cuenta
+    - login
+    - inicio de sesion
 
 - intent: login_req
   examples: |
     - cual es mi usuario?
     - con que usuario he iniciado sesion?
+    - olvide mi usuario
+    - que usuario?
+    - de que me hablas?
+    - quiero conocer mi usuario
 
 - intent: pedidos
   examples: |
     - me gustaria realizar un pedido
     - como realizo un pedido
     - puedo realizar un pedido?
+    - quiero hacer un pedido
+    - quiero comprar cosas
+    - necesito una recarga de stock
+    - vengo a comprar
+    - quiero comprar
+    - vengo a hacer un pedido
+    - quisiera comprar productos
+    - necesito recargar mi stock
+    - necesito hacer un pedido
+    - pedido
   
 - intent: carrito_compra
   examples: |
@@ -57,6 +78,9 @@ nlu:
   examples: |
     - quiero registrar mi cuenta
     - quiero registrarme
+    - me gustaria registrarme
+    - registrarme
+    - registrar mi cuenta
 
 - intent: elegir_mpago
   examples: |
@@ -68,17 +92,53 @@ nlu:
   examples: |
     - si, me parece bien
     - bueno
+    - perfecto
+    - todo genial
+    - esta bien
+    - muy bien
+    - magnifico
+    - petacular
 
 - intent: negar
   examples: |
     - no, quiero usar otro
     - quiero usar otro
+    - eso no me gusta
+    - otro metodo
+    - de otra manera
+    - otra forma
+    - asi no
+    - no
+    - negativo
 
 - regex: mumero_pedido
   examples: |
     - \d{4}
+
 - intent: consultar_envio_pedido
   examples: |
     - cuando llega este pedido [3243](numero_pedido)
     - quiero saber cuando llega el pedido [2323](numero_pedido)
     - cuando llega el pedido [1111](numero_pedido)
+
+- intent: felicidad
+  examples: |
+    - muchas gracias
+    - me parece perfecto
+    - te agradezco
+    - sos genial
+    - gracias
+    - genial
+    - me encanto
+    - perfecto
+    - te amo bot
+
+- intent: enojo
+  examples: |
+    - no asi no
+    - esta porqueria
+    - anda re mal
+    - todo mal
+    - no funciona
+    - esto no sirve
+    - lo escribi bien!

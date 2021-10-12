@@ -7,10 +7,10 @@ entities:
   - numero_pedido
   
 intents:
-  - greet
-  - goodbye
+  - saludar
+  - despedirse
   - consultar
-  - login
+  - loguearse
   - login_req
   - register
   - pedidos
@@ -19,6 +19,8 @@ intents:
   - afirmar
   - negar
   - consultar_envio_pedido
+  - felicidad
+  - enojo
 
 forms:
   login_form:
@@ -49,12 +51,15 @@ slots:
     max_value: 5.0
 
 responses:
-  utter_greet:
-  - text: "Hola, soy el asistente automatizado de Jaguar S.A\nEn que puedo ayudar?"
+  utter_presentacion:
+  - text: "Hola, soy el asistente automatizado de Jaguar S.A\nEn que puedo ayudarte?"
 
-  utter_goodbye:
+  utter_despedida:
   - text: "Adios, {usuario}, espero haberte ayudado :)"
 
+  utter_despedida_anonima:
+  - text: "Gracias por visitarnos, espero haberte ayudado."
+  
   utter_ask_usuario:
   - text: "Cual es tu usuario?"
 
@@ -78,6 +83,18 @@ responses:
 
   utter_compranoaceptada:
   - text: "La compra se cancelo, prueba comprando otros productos"
+
+  utter_calmar_anonimo:
+  - text: "Hago lo posible por ayudarte, por favor tenga mas paciencia"
+
+  utter_calmar_usuario:
+  - text: "Disculpeme {usuario}, intentare mejorar mi funcionamiento para poder ayudarte en lo que necesites"
+
+  utter_feliz:
+  - text: "Me alegra poder ayudarte {usuario}! \nSi necesitas algo mas aqui estare."
+
+  utter_feliz_anonimo:
+  - text: "Si necesitas algo mas, aqui estare para ayudarte."
 
 actions:
   - action_consultar

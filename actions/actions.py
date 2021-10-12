@@ -27,12 +27,16 @@ class ActionConsulta(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         consulta = next(tracker.get_latest_entity_values("consulta"), None)
-        if str(consulta)=="precio":
-            message="Estos son los precios de nuestros productos:\n Sopa Knorr: $27,80 (IVA incluido)\n  Sopa Knorr (Bulto x24):$624,22\n Fideos Matarazzo $39\n  Fideos Matarazzo (Bulto x50): $1821\n Papel Higienico Scott (50m) $80\n  Papel Higiennico Scott (Bulto x24): $1761\n Mayonesa Hellmann's: $140\n  Mayonesa Hellmann's (Bulto x24): $3160"
-            dispatcher.utter_message(text=message)
-        elif str(consulta)=="disponibilidad":
-            message="Aqui tienes un listado de la disponibilidad de nuestros productos:\n Sopas Knorr: En Stock\n Fideos Matarazzo: En Stock\n Papel Higienico Scott: En Stock\n Mayonesa Hellmann's: En stock"
-            dispatcher.utter_message(text=message)
+        if str(consulta)=="precio" or str(consulta)=="disponibilidad":
+            with open('Productos.json', 'r') as contenido:
+                productos = json.load(contenido)
+                dispatcher.utter_message(text= "Este es el catalogo actualizado de nuestros productos:\n")
+                for producto in productos["productos"]:
+                    dispatcher.utter_message(text = "| \t Producto: " + producto["nombre"] + "\n")
+                    dispatcher.utter_message(text = "| \t Precio individual: " + str(producto["Individual"]) + " \n")
+                    dispatcher.utter_message(text = "| \t Precio bulto: " + str(producto["preciobulto"]) + " \n")
+                    dispatcher.utter_message(text = "| \t Stock: "+ str(producto["stock"]) +" \n")
+                    dispatcher.utter_message(text = "--------------------------------------\n")
         elif str(consulta)=="horarios":
             message="Los horarios de atencion al cliente son de 8:00 a 17:00\nSi quieres contactarte con nosotros, nuestro numero de telefono es: 0-800-rasahelp"
             dispatcher.utter_message(text=message)
@@ -44,7 +48,6 @@ class ActionConsulta(Action):
                     i = 0
                     while i < len(datos["cuentas"]) and datos["cuentas"][i]["user"] != user:
                         i = i+1
-
                     dispatcher.utter_message(text="Estas son tus compras con sus respectivas fechas de entrega:\n ")
                     for codigo in datos["cuentas"][i]["compras"]:
                         j = 0
@@ -100,7 +103,7 @@ class ActionConsultarEnvio(Action):
                     elif cont_ansioso == 4:
                         cont_ansioso += 1
                         print("Contador ans: 5")
-                        dispatcher.utter_message(text="Parece que estas consultando mucho por este envio, vere si puedo apresurar un poco el envio")
+                        dispatcher.utter_message(text="Parece que estas consultando mucho por este envio, vere si puedo apresurar un poco el tramite")
                         fecha = datetime.strptime(fecha, "%d/%m/%Y")
                         fecha = fecha - timedelta(days = 2)
                         fecha = fecha.strftime("%d/%m/%Y")
@@ -109,7 +112,7 @@ class ActionConsultarEnvio(Action):
                         json.dump(datos, acc, indent=4)
                         return[SlotSet("ansioso", cont_ansioso)]
             else:
-                message = f"No puedo encontrar un pedido con el numero {npedido}, quizas no sea el numero correcto"
+                message = f"El numero {npedido}, no pertenece a ningun envio de productos que se haya realizado recientemente \nQuiza no escribiste bien el numero, vuelve a intentarlo"
                 dispatcher.utter_message(text=message)
 
         return []

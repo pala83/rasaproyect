@@ -4,16 +4,16 @@ stories:
 
 - story: consultar_path
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saludar
+  - action: utter_presentacion
   - intent: consultar
   - action: action_consultar
 
 - story: login_path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: login
+  - intent: saludar
+  - action: utter_presentacion
+  - intent: loguearse
   - action: login_form
   - active_loop: login_form
   - slot_was_set:
@@ -23,8 +23,8 @@ stories:
   
 - story: comprar_path_logged
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saludar
+  - action: utter_presentacion
   - intent: pedidos
   - slot_was_set:
       - usuario: null
@@ -32,8 +32,8 @@ stories:
 
 - story: comprar_path_logged
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saludar
+  - action: utter_presentacion
   - intent: pedidos
   - slot_was_set:
       - usuario
@@ -64,8 +64,8 @@ stories:
 
 - story: comprar_path_logged2
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saludar
+  - action: utter_presentacion
   - intent: pedidos
   - slot_was_set:
       - usuario
@@ -82,8 +82,8 @@ stories:
 
 - story: comprar_path_logged_no_aceptado
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saludar
+  - action: utter_presentacion
   - intent: pedidos
   - slot_was_set:
       - usuario
@@ -96,15 +96,15 @@ stories:
 
 - story: consultar_envio
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saludar
+  - action: utter_presentacion
   - intent: consultar_envio_pedido
   - action: action_consultar_envio
 
 - story: reg_path
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: saludar
+  - action: utter_presentacion
   - intent: register
   - action: reg_form
   - active_loop: reg_form

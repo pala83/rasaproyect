@@ -1,14 +1,64 @@
 {
-    "productos": [
+    "productos":[
         {
-            "nombre": "sopa knorr",
-            "stock": 471,
-            "preciobulto": 625
+            "nombre": "Alfajores aguilla",
+            "Individual": 450,
+            "preciobulto": 10560,
+            "stock" : 1000
         },
         {
-            "nombre": "mayonesa helmanns",
-            "stock": 584,
-            "preciobulto": 3160
+            "nombre": "Caramelos sugus",
+            "Individual": 210,
+            "preciobulto": 4800,
+            "stock" : 1000
+        },
+        {
+            "nombre": "Chupetin pico dulce",
+            "Individual": 650,
+            "preciobulto": 15120,
+            "stock" : 1000
+        },
+        {
+            "nombre": "barras chocolate milk",
+            "Individual": 165,
+            "preciobulto": 3600,
+            "stock" : 1000
+        },
+        {
+            "nombre": "galletitas surtido bagley",
+            "Individual": 190,
+            "preciobulto": 4320,
+            "stock" : 1000
+        },
+        {
+            "nombre": "Balde de plastico",
+            "Individual": 200,
+            "preciobulto": 2232,
+            "stock" : 1000
+        },
+        {
+            "nombre": "Lavandina",
+            "Individual": 120,
+            "preciobulto": 1380,
+            "stock" : 1000
+        },
+        {
+            "nombre": "Jabon ace liquido",
+            "Individual": 320,
+            "preciobulto": 3600,
+            "stock" : 1000
+        },
+        {
+            "nombre": "Mopas",
+            "Individual": 150,
+            "preciobulto": 1680,
+            "stock" : 1000
+        },
+        {
+            "nombre": "Escoba",
+            "Individual": 130,
+            "preciobulto": 1500,
+            "stock" : 1000
         }
     ]
 }
