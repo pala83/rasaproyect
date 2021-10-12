@@ -70,9 +70,20 @@ nlu:
   
 - intent: carrito_compra
   examples: |
-    - quiero comprar 2 [mayonesa helmanns](producto), 3 [sopa knorr](producto)
-    - quiero comprar 1 [mayonesa helmanns](producto), 2 [sopa knorr]](producto)
-    - quiero comprar 1 [mayonesa helmanns](producto), 2 [pan](producto)
+    - quiero comprar 2 [mayonesa helmans](producto), 3 [sopa knor](producto)
+    - quiero comprar 1 [Escoba](producto), 2 [Mopas]](producto)
+    - quiero comprar 1 [Jabon ace liquido](producto), 2 [Caramelos sugus](producto)
+    - me gustaria comprar 28 [Alfajores aguilla](producto)
+    - quiero 50 [Caramelos sugus](producto)
+    - necesito 700 [Chupetin pico dulce](producto)
+    - requiero 800 [barras chocolate milk](producto)
+    - [galletitas surtido bagley](producto)
+    - [Balde de plastico](producto)
+    - [Lavandina](producto)
+    - [Jabon ace liquido](producto)
+    - [Mopas](producto)
+    - [Escoba](producto)
+
 
 - intent: register
   examples: |
@@ -85,6 +96,9 @@ nlu:
 - intent: elegir_mpago
   examples: |
     - [paypal](mpago)
+    - [Visa](mpago)
+    - [MasterCard](mpago)
+    - [MercadoPago](mpago)
     - [tarjeta de credito](mpago)
     - [efectivo](mpago)
 

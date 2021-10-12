@@ -1,10 +1,7 @@
 # This files contains your custom actions which can be used to run
 # custom Python code.
-#
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
-
-
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
@@ -241,7 +238,7 @@ class ActionMetodoPago(Action):
                     i = i+1
                 if i < len(datos["cuentas"]) and datos["cuentas"][i]["user"] == user:
                     metodo = datos["cuentas"][i]["metodo_pago_fav"]
-                    message = f"Parece que ya has comprado usando {metodo}, te gustaria volver a comprar de la misma forma?"
+                    message = f"En tu ultima compra pagaste con {metodo}, te gustaria volver a comprar de la misma forma?"
                     dispatcher.utter_message(text=message)
                 else:
                     print("ERROR: Este error no deberia suceder")

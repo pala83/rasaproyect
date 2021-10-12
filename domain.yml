@@ -61,28 +61,28 @@ responses:
   - text: "Gracias por visitarnos, espero haberte ayudado."
   
   utter_ask_usuario:
-  - text: "Cual es tu usuario?"
+  - text: "Ingrese su nombre de Usuario"
 
   utter_ask_nuevo:
-  - text: "Cual es tu contrasena?"
+  - text: "Ingrese su Contraseña"
 
   utter_loggeado:
   - text: "Has iniciado sesion como {usuario}"
 
   utter_pedidos_logged:
-  - text: "Que le gustaria comprar?"
+  - text: "Para realizar una compra, ingrese la cantidad de producto que necesita, seguido, el producto que solicita. \nQue desea comprar?"
   
   utter_respuesta:
-  - text: "Esta bien"
+  - text: "Me parece perfecto."
 
   utter_nologgeado:
-  - text: "Parece que no has iniciado sesion. Intenta iniciar sesion o registrarte primero."
+  - text: "Para poder realizar esa accion, debo saber quien es usted. \nSi ya nos conocemos, le gustaria iniciar sesion? \nO prefiere registrar sus datos como un nuevo cliente?"
 
   utter_nuevo_mpago:
-  - text: "Digame que metodo de pago desea utilizar para realizar la compra, por favor."
+  - text: "Con que metodo de pago le gustaria finalizar su compra? \nActualmente trabajamos con Debito: \n|\t Visa. \n|\t MasterCard. \n|\t MercadoPago. \n|\t Efectivo."
 
   utter_compranoaceptada:
-  - text: "La compra se cancelo, prueba comprando otros productos"
+  - text: "El pedido no cumple con los requisitos que solicitamos para realizarlo \nCompra cancelada \nRecomiendo volver a realizar el pedido con otros productos"
 
   utter_calmar_anonimo:
   - text: "Hago lo posible por ayudarte, por favor tenga mas paciencia"

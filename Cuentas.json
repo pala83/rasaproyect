@@ -10,10 +10,11 @@
         {
             "user": "juan",
             "password": 12345678,
-            "metodo_pago_fav": "paypal",
-            "n_compras": 4,
+            "metodo_pago_fav": "efectivo",
+            "n_compras": 5,
             "compras": [
-                2142
+                2142,
+                6032
             ]
         },
         {
@@ -22,6 +23,15 @@
             "metodo_pago_fav": null,
             "n_compras": 0,
             "compras": []
+        },
+        {
+            "user": "ulises",
+            "password": "4037",
+            "metodo_pago_fav": "efectivo",
+            "n_compras": 1,
+            "compras": [
+                8770
+            ]
         }
     ],
     "envios": [
@@ -63,6 +73,20 @@
             ],
             "valor_total": 8545,
             "entrega": "21/10/2021",
+            "cobro_envio": true
+        },
+        {
+            "npedido": 6032,
+            "carrito": [],
+            "valor_total": 0,
+            "entrega": "21/10/2021",
+            "cobro_envio": false
+        },
+        {
+            "npedido": 8770,
+            "carrito": [],
+            "valor_total": 350,
+            "entrega": "25/10/2021",
             "cobro_envio": true
         }
     ],
