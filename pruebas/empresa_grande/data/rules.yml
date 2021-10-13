@@ -1,0 +1,55 @@
+version: "2.0"
+
+rules:
+
+- rule: despedida_usuario
+  condition:
+    - slot_was_set:
+      - usuario: true
+  steps:
+  - intent: despedirse
+  - action: utter_despedida
+
+- rule: despedida_anonima
+  steps:
+  - intent: despedirse
+  - action: utter_despedida_anonima
+
+- rule: ya he iniciado sesion?
+  condition:
+    - slot_was_set:
+      - usuario: true
+  steps:
+  - intent: login_req
+  - action: utter_loggeado
+
+- rule: sesion no iniciada
+  steps:
+  - intent: login_req
+  - action: utter_nologgeado
+
+- rule: usuario_feliz
+  condition:
+    - slot_was_set:
+      - usuario: true
+  steps:
+  - intent: felicidad
+  - action: utter_feliz
+
+- rule: feliz_anonimo
+  steps:
+  - intent: felicidad
+  - action: utter_feliz_anonimo
+
+- rule: usuario_feliz
+  condition:
+    - slot_was_set:
+      - usuario: true
+  steps:
+  - intent: enojo
+  - action: utter_calmar_usuario
+
+- rule: feliz_anonimo
+  steps:
+  - intent: enojo
+  - action: utter_calmar_anonimo

@@ -1,0 +1,219 @@
+version: "2.0"
+
+nlu:
+- intent: saludar
+  examples: |
+    - hola
+    - que tal?
+    - buen dia
+    - buenas tardes
+    - buenos dias
+    - buenas noches
+    - hi
+
+- intent: presentacion_bot
+  examples: |
+    - Hola, soy el asistente automatizado de Jaguar S.A
+    - En que puedo ayudarte?
+    - Bienvenido a Jaguar
+    - Hola, soy pepe
+
+- intent: pedir_usuario
+  examples: |
+   - Ingrese su nombre de usuario
+   - requiero su usuario
+   - escribi tu usuario
+   - cual es tu usuario?
+   - ingresar usuario
+
+- intent: pedir_contrasena
+  examples: |
+   - Ingrese su contrasena
+   - requiero su contrasena
+   - escribi tu contrasena
+   - cual es tu contrasena?
+   - ingresar contrasena
+
+- intent: bienvenida
+  examples: |
+   - Bievenido/a, supermercados Asia, espero poder ayudarte.
+   - bienvenido supermercados Asia
+   - Has iniciado sesion como supermercados Asia
+   - espero poder ayudarte
+   - Bienvenido/a
+
+- intent: explicacion_compra
+  examples: |
+   - Para realizar una compra, ingrese la cantidad de producto que necesita, seguido, el producto que solicita.
+   - Que desea comprar?
+   - que queres comprar?
+   - que presisas?
+
+- intent: compra_pago
+  examples: |
+   - En tu ultima compra pagaste con efectivo, te gustaria volver a comprar de la misma forma?
+   - compra exitosa
+   - gracias por comprar
+   - en tu ultima compra
+
+- intent: compra_exitosa
+  examples: |
+   - gracias por comprar
+   - Por favor, ingrese al siguiente link y complete el formulario con sus datos para completar la compra
+   - FELICIDADES! Esta es tu compra numero 5, por lo tanto no te cobraremos el envio de este pedido
+   - por favor, ingrese al siguiente link y complete el formulario
+
+- intent: compra_fallida
+  examples: |
+   - El pedido no cumple con los requisitos que solicitamos para realizarlo
+   - compra cancelada
+   - Recomiendo volver a realizar el pedido con otros productos
+   - el elemento que desea comprar no se encuentra en nuestro catalogo.
+   - no hay suficientes unidades
+   - no hay suficientes unidades para efectuar la compra
+
+- intent: despedirse
+  examples: |
+    - adios
+    - nos vemos
+    - hasta luego
+    - hasta pronto
+    - eso es todo
+    - chau
+    - bye
+
+- intent: consultar
+  examples: |
+    - quiero consultar por el [precio](consulta) de sus productos
+    - necesito saber el [precio](consulta) de sus productos
+    - necesito saber la [disponibilidad](consulta) de sus productos
+    - quiero saber la [disponibilidad](consulta) de sus productos
+    - quiero saber cuales son los [horarios](consulta) de atencion al cliente
+    - necesito saber los [horarios](consulta) de atencion al ciente
+    - quiero ver mi [historial](consulta) de commpras
+    - necesito ver mi [historial](consulta) de compras
+
+- intent: loguearse
+  examples: |
+    - quiero iniciar sesion en mi cuenta
+    - me gustaria iniciar sesion en mi cuenta
+    - puedo iniciar sesion en mi cuenta?
+    - iniciar sesion
+    - quiero loguearme
+    - loguear mi cuenta
+    - login
+    - inicio de sesion
+
+- intent: login_req
+  examples: |
+    - cual es mi usuario?
+    - con que usuario he iniciado sesion?
+    - olvide mi usuario
+    - que usuario?
+    - de que me hablas?
+    - quiero conocer mi usuario
+
+- intent: pedidos
+  examples: |
+    - me gustaria realizar un pedido
+    - como realizo un pedido
+    - puedo realizar un pedido?
+    - quiero hacer un pedido
+    - quiero comprar cosas
+    - necesito una recarga de stock
+    - vengo a comprar
+    - quiero comprar
+    - vengo a hacer un pedido
+    - quisiera comprar productos
+    - necesito recargar mi stock
+    - necesito hacer un pedido
+    - pedido
+  
+- intent: carrito_compra
+  examples: |
+    - quiero comprar 2 [mayonesa helmans](producto), 3 [sopa knor](producto)
+    - quiero comprar 1 [Escoba](producto), 2 [Mopas]](producto)
+    - quiero comprar 1 [Jabon ace liquido](producto), 2 [Caramelos sugus](producto)
+    - me gustaria comprar 28 [Alfajores aguilla](producto)
+    - quiero 50 [Caramelos sugus](producto)
+    - necesito 700 [Chupetin pico dulce](producto)
+    - requiero 800 [barras chocolate milk](producto)
+    - [galletitas surtido bagley](producto)
+    - [Balde de plastico](producto)
+    - [Lavandina](producto)
+    - [Jabon ace liquido](producto)
+    - [Mopas](producto)
+    - [Escoba](producto)
+
+
+- intent: register
+  examples: |
+    - quiero registrar mi cuenta
+    - quiero registrarme
+    - me gustaria registrarme
+    - registrarme
+    - registrar mi cuenta
+
+- intent: elegir_mpago
+  examples: |
+    - [paypal](mpago)
+    - [Visa](mpago)
+    - [MasterCard](mpago)
+    - [MercadoPago](mpago)
+    - [tarjeta de credito](mpago)
+    - [efectivo](mpago)
+
+- intent: afirmar
+  examples: |
+    - si, me parece bien
+    - bueno
+    - perfecto
+    - todo genial
+    - esta bien
+    - muy bien
+    - magnifico
+    - petacular
+
+- intent: negar
+  examples: |
+    - no, quiero usar otro
+    - quiero usar otro
+    - eso no me gusta
+    - otro metodo
+    - de otra manera
+    - otra forma
+    - asi no
+    - no
+    - negativo
+
+- regex: mumero_pedido
+  examples: |
+    - \d{4}
+
+- intent: consultar_envio_pedido
+  examples: |
+    - cuando llega este pedido [3243](numero_pedido)
+    - quiero saber cuando llega el pedido [2323](numero_pedido)
+    - cuando llega el pedido [1111](numero_pedido)
+
+- intent: felicidad
+  examples: |
+    - muchas gracias
+    - me parece perfecto
+    - te agradezco
+    - sos genial
+    - gracias
+    - genial
+    - me encanto
+    - perfecto
+    - te amo bot
+
+- intent: enojo
+  examples: |
+    - no asi no
+    - esta porqueria
+    - anda re mal
+    - todo mal
+    - no funciona
+    - esto no sirve
+    - lo escribi bien!
