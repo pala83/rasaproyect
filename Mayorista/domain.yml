@@ -1,0 +1,113 @@
+version: "2.0"
+
+entities:
+  - consulta
+  - mpago
+  - producto
+  - numero_pedido
+  
+intents:
+  - greet
+  - goodbye
+  - consultar
+  - login
+  - login_req
+  - register
+  - pedidos
+  - carrito_compra
+  - elegir_mpago
+  - afirmar
+  - negar
+  - consultar_envio_pedido
+  - felicidad
+  - enojo
+
+forms:
+  login_form:
+    usuario:
+      - type: from_text
+    nuevo:
+      - type: from_text
+
+  reg_form:
+    usuario:
+      - type: from_text
+    nuevo:
+      - type: from_text
+
+slots:
+  usuario:
+    type: text
+    influence_conversation: true
+  nuevo:
+    type: bool
+    influence_conversation: true
+  compra_aceptada:
+    type: bool
+    influence_conversation: true
+  ansioso:
+    type: float
+    min_value: 1.0
+    max_value: 5.0
+
+responses:
+  utter_greet:
+  - text: "Hola, soy el asistente automatizado de Jaguar S.A\nEn que puedo ayudar?"
+
+  utter_goodbye:
+  - text: "Adios, espero haberte ayudado, {usuario} :) Vuelve pronto"
+
+  utter_despedida_anonima:
+  - text: "Gracias por visitarnos, espero haberte ayudado."
+  
+  utter_ask_usuario:
+  - text: "Ingrese su nombre de Usuario"
+
+  utter_ask_nuevo:
+  - text: "Ingrese su Contraseña"
+
+  utter_loggeado:
+  - text: "Has iniciado sesion como {usuario}"
+
+  utter_pedidos_logged:
+  - text: "Que le gustaria comprar? \ningrese la cantidad de producto que necesita seguido del producto que desea comprar."
+  
+  utter_respuesta:
+  - text: "Me parece perfecto."
+
+  utter_nologgeado:
+  - text: "Para poder realizar esa accion, debo saber quien es usted. \nSi ya nos conocemos, le gustaria iniciar sesion? \nO prefiere registrar sus datos como un nuevo cliente?"
+
+  utter_nuevo_mpago:
+  - text: "Con que metodo de pago le gustaria finalizar su compra? \nActualmente trabajamos con Debito: \n|\t Visa. \n|\t MasterCard. \n|\t MercadoPago. \n|\t Efectivo."
+
+  utter_compranoaceptada:
+  - text: "El pedido no cumple con los requisitos que solicitamos para realizarlo \nCompra cancelada \nRecomiendo volver a realizar el pedido con otros productos"
+
+  utter_calmar_anonimo:
+  - text: "Hago lo posible por ayudarte, por favor tenga mas paciencia"
+
+  utter_calmar_usuario:
+  - text: "Disculpeme {usuario}, intentare mejorar mi funcionamiento para poder ayudarte en lo que necesites"
+
+  utter_feliz:
+  - text: "Me alegra poder ayudarte {usuario}! \nSi necesitas algo mas aqui estare."
+
+  utter_feliz_anonimo:
+  - text: "Si necesitas algo mas, aqui estare para ayudarte."
+
+actions:
+  - action_consultar
+  - action_consultar_envio
+  - validate_login_form
+  - validate_reg_form
+  - action_metodo_pago
+  - action_efectuar_pago
+  - action_efectuar_pago2
+  - action_set_nuevo
+  - action_realizar_pedido
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

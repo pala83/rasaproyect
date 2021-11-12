@@ -1,0 +1,147 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - que tal?
+    - buen dia
+    - buenas tardes
+    - buenos dias
+    - buenas noches
+    - hi
+
+- intent: goodbye
+  examples: |
+    - adios
+    - nos vemos
+    - hasta luego
+    - hasta pronto
+    - eso es todo
+    - chau
+    - bye
+
+- intent: consultar
+  examples: |
+    - quiero consultar por el [precio](consulta) de sus productos
+    - necesito saber el [precio](consulta) de sus productos
+    - necesito saber la [disponibilidad](consulta) de sus productos
+    - quiero saber la [disponibilidad](consulta) de sus productos
+    - quiero saber cuales son los [horarios](consulta) de atencion al cliente
+    - necesito saber los [horarios](consulta) de atencion al ciente
+    - quiero ver mi [historial](consulta) de commpras
+    - necesito ver mi [historial](consulta) de compras
+
+- intent: login
+  examples: |
+    - quiero iniciar sesion en mi cuenta
+    - me gustaria iniciar sesion en mi cuenta
+    - puedo iniciar sesion en mi cuenta?
+    - iniciar sesion
+    - quiero loguearme
+    - loguear mi cuenta
+    - login
+    - inicio de sesion
+
+- intent: login_req
+  examples: |
+    - cual es mi usuario?
+    - con que usuario he iniciado sesion?
+    - olvide mi usuario
+
+- intent: pedidos
+  examples: |
+    - me gustaria realizar un pedido
+    - como realizo un pedido
+    - puedo realizar un pedido?
+    - quiero hacer un pedido
+    - quiero comprar cosas
+    - necesito una recarga de stock
+    - vengo a comprar
+    - quiero comprar
+    - vengo a hacer un pedido
+    - quisiera comprar productos
+    - necesito recargar mi stock
+    - necesito hacer un pedido
+    - pedido
+  
+- intent: carrito_compra
+  examples: |
+    - quiero comprar 2 [mayonesa helmanns](producto), 3 [sopa knorr](producto)
+    - quiero comprar 1 [mayonesa helmanns](producto), 2 [sopa knorr]](producto)
+    - quiero comprar 1 [mayonesa helmanns](producto), 2 [fideos matarazzo](producto)
+    - quiero comprar 100 [fideos matarazzo](producto), 50 [mayonesa helmanns](producto), 50 [sopa knorr](producto) y 100 [papel higienico scott](producto)
+    - quiero comprar 10 bultos de [fideos matarazzo](producto), 10 bultos de [papel higienico scott](producto)
+    - quiero comprar 10 [papel higienico scott](producto)
+    - quiero comprar 10 [mayonesa helmanns](producto)
+    - quiero comprar 10 [fideos matarazzo](producto)
+    - quiero comprar 10 [sopa knorr](producto)
+
+- intent: register
+  examples: |
+    - quiero registrar mi cuenta
+    - quiero registrarme
+
+- intent: elegir_mpago
+  examples: |
+    - [paypal](mpago)
+    - [visa](mpago)
+    - [mastercard](mpago)
+    - [mercadoPago](mpago)
+    - [tarjeta de credito](mpago)
+    - [efectivo](mpago)
+    - me gustaria usar [visa](mpago)
+    - me gustaria usar [mastercard](mpago)
+
+- intent: afirmar
+  examples: |
+    - si, me parece bien
+    - bueno
+    - perfecto
+    - todo genial
+    - esta bien
+    - muy bien
+    - magnifico
+    - petacular
+
+
+- intent: negar
+  examples: |
+    - no, quiero usar otro
+    - quiero usar otro
+    - eso no me gusta
+    - otro metodo
+    - de otra manera
+    - no
+    - negativo
+
+- regex: mumero_pedido
+  examples: |
+    - \d{4}
+- intent: consultar_envio_pedido
+  examples: |
+    - cuando llega este pedido [3243](numero_pedido)
+    - quiero saber cuando llega el pedido [2323](numero_pedido)
+    - cuando llega el pedido [1111](numero_pedido)
+
+- intent: felicidad
+  examples: |
+    - muchas gracias
+    - me parece perfecto
+    - te agradezco
+    - sos genial
+    - gracias
+    - genial
+    - me encanto
+    - perfecto
+    - te amo bot
+
+- intent: enojo
+  examples: |
+    - no asi no
+    - esta porqueria
+    - anda re mal
+    - todo mal
+    - no funciona
+    - esto no sirve
+    - lo escribi bien!

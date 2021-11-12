@@ -1,0 +1,8 @@
+version: "2.0"
+
+rules:
+
+- rule: Agradecer cada vez que detecta que se completa algo que pidio hacer
+  steps:
+  - intent: accion_completada
+  - action: utter_agradecer

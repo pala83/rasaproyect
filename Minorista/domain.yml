@@ -1,0 +1,78 @@
+version: "2.0"
+
+entities:
+  - mayorista
+  - producto
+  
+slots:
+  usuario:
+    type: text
+    influence_conversation: False
+  compra:
+    type: bool
+    influence_conversation: False
+  consulta:
+    type: bool
+    influence_conversation: False
+  mayorista:
+    type: text
+    influence_conversation: False
+
+intents:
+  - elegir_que_hacer
+  - preguntar_usuario
+  - preguntar_contr
+  - que_comprar
+  - nuevo_mpago
+  - viejo_mpago
+  - accion_completada
+  - solicitar_compra
+  - carrito
+  - rellenar_stock
+  - stock
+
+responses:
+
+  utter_usuario:
+  - text: "monarca"
+
+  utter_contr:
+  - text: "12345"
+
+  utter_comprar:
+  - text: "me gustaria realizar un pedido"
+
+  utter_nuevo_mpago:
+  - text: "Me gustaria usar visa"
+
+  utter_viejo_mpago:
+  - text: "si, me parece bien"
+
+  utter_historial:
+  - text: "quiero ver mi historial de compras"
+
+  utter_agradecer:
+  - text: "Gracias"
+
+  utter_iamabot:
+  - text: "Yo soy un bot para la empresa minorista"
+
+  utter_solicitar_compra:
+  - text: "que deseas comprar?"
+
+  utter_iniciar_sesion:
+  - text: "quiero iniciar sesion en mi cuenta"
+
+  utter_conect_mayorista:
+  - text: "conectandose con el bot Mayorista..."
+
+actions:
+  - action_elegir_que_hacer
+  - action_que_comprar
+  - action_realizar_pedido
+  - action_mayorista
+  - action_stock
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

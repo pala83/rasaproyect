@@ -1,0 +1,61 @@
+version: "2.0"
+
+stories:
+
+- story: inicio_sesion
+  steps:
+  - intent: elegir_que_hacer
+  - action: action_elegir_que_hacer
+  - intent: preguntar_usuario
+  - action: utter_usuario
+  - intent: preguntar_contr
+  - action: utter_contr
+
+- story: preguntar_dato
+  steps:
+  - intent: preguntar_usuario
+  - action: utter_usuario
+  - intent: preguntar_contr
+  - action: utter_contr
+
+- story: comprar_nuevo_mpago
+  steps:
+  - intent: elegir_que_hacer
+  - action: action_elegir_que_hacer
+  - intent: que_comprar
+  - action: action_que_comprar
+  - intent: nuevo_mpago
+  - action: utter_nuevo_mpago
+
+- story: comprar_viejo_mpago
+  steps:
+  - intent: elegir_que_hacer
+  - action: action_elegir_que_hacer
+  - intent: que_comprar
+  - action: action_que_comprar
+  - intent: viejo_mpago
+  - action: utter_viejo_mpago
+
+- story: consultar_stock
+  steps:
+  - intent: stock
+  - action: action_stock
+
+- story: conectarse_mayorista
+  steps:
+  - intent: rellenar_stock
+  - action: utter_conect_mayorista
+
+#- story: comprar_al_minorista
+#  steps:
+#  - intent: solicitar_compra
+#  - action: utter_solicitar_compra
+#  - intent: carrito
+#  - action: action_realizar_pedido
+
+
+#- story: activar_interaccion
+#  steps:
+#  - intent: rellenar_stock
+#  - action: action_mayorista
+

@@ -1,0 +1,114 @@
+version: "2.0"
+
+stories:
+
+- story: consultar_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: consultar
+  - action: action_consultar
+
+- story: login_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: login
+  - action: login_form
+  - active_loop: login_form
+  - slot_was_set:
+    - requested_slot: usuario
+  - slot_was_set:
+    - requested_slot: contr
+  
+- story: comprar_path_logged
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pedidos
+  - slot_was_set:
+      - usuario: null
+  - action: utter_nologgeado
+
+- story: comprar_path_logged
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pedidos
+  - slot_was_set:
+      - usuario
+  - action: utter_pedidos_logged
+  - intent: carrito_compra
+  - action: action_realizar_pedido
+  - slot_was_set:
+    - compra_aceptada: true
+  - slot_was_set:
+    - nuevo: false
+  - action: action_metodo_pago
+  - checkpoint: check_respuesta
+
+- story: respuesta_afirmacion
+  steps:
+  - checkpoint: check_respuesta
+  - intent: afirmar
+  - action: utter_respuesta
+  - action: action_efectuar_pago2
+
+- story: respuesta_negacion
+  steps:
+  - checkpoint: check_respuesta
+  - intent: negar
+  - action: utter_nuevo_mpago
+  - intent: elegir_mpago
+  - action: action_efectuar_pago
+
+- story: comprar_path_logged2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pedidos
+  - slot_was_set:
+      - usuario
+  - action: utter_pedidos_logged
+  - intent: carrito_compra
+  - action: action_realizar_pedido
+  - slot_was_set:
+    - compra_aceptada: true
+  - slot_was_set:
+    - nuevo: true
+  - action: utter_nuevo_mpago
+  - intent: elegir_mpago
+  - action: action_efectuar_pago
+
+- story: comprar_path_logged_no_aceptado
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: pedidos
+  - slot_was_set:
+      - usuario
+  - action: utter_pedidos_logged
+  - intent: carrito_compra
+  - action: action_realizar_pedido
+  - slot_was_set:
+    - compra_aceptada: false
+  - action: utter_compranoaceptada
+
+- story: consultar_envio
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: consultar_envio_pedido
+  - action: action_consultar_envio
+
+- story: reg_path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: register
+  - action: reg_form
+  - active_loop: reg_form
+  - slot_was_set:
+    - requested_slot: usuario
+  - slot_was_set:
+    - requested_slot: contr

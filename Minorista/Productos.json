@@ -1,0 +1,28 @@
+{
+    "productos": [
+        {
+            "nombre": "sopa knorr",
+            "stock": 500,
+            "individual": 28,
+            "preciobulto": 624
+        },
+        {
+            "nombre": "mayonesa helmanns",
+            "stock": 500,
+            "individual": 140,
+            "preciobulto": 3160
+        },
+        {
+            "nombre": "fideos matarazzo",
+            "stock": 1000,
+            "individual": 39,
+            "preciobulto": 1821
+        },
+        {
+            "nombre": "papel higienico scott",
+            "stock": 1000,
+            "individual": 80,
+            "preciobulto": 1761
+        }
+    ]
+}

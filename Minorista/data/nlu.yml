@@ -1,0 +1,98 @@
+version: "2.0"
+
+nlu:
+
+- intent: elegir_que_hacer
+  examples: |
+    - soy el asistente automatizado de [Jaguar](mayorista) S.A. En que puedo ayudar?
+    - soy el asistente automatizado de [Arcor](mayorista). En que puedo ayudar?
+    - soy el asistente automatizado de [Limpisima](mayorista). En que puedo ayudar?
+    - en que puedo ayudar?
+    - que necesitas?
+    - si necesitas algo mas, aqui estare
+    - que puedo hacer por vos?
+    - en que puedo ayudarte?
+    - espero poder ayudarte
+    - espero ayudar
+    - dime si necesitas algo
+    - dime si necesitas algo mas
+    - esta bien
+    - me parece perfecto
+
+- intent: stock
+  examples: |
+    - quiero saber la disponibilidad de sus productos
+    - quiero saber el precio de sus productos
+
+- intent: preguntar_usuario
+  examples: |
+    - cual es tu usuario?
+    - cual es tu user?
+    - como es tu usuario?
+    - como es tu user?
+    - usuario
+    - ingrese su nombre de usuario
+    - nombre de usuario
+
+- intent: preguntar_contr
+  examples: |
+    - cual es tu contrasena?
+    - cual es tu password?
+    - como es tu contrasena?
+    - como es tu password?
+    - Cual es tu contrasena?
+    - contrasena
+    - ingrese su contrasena
+    - ingrese su contraseña
+
+- intent: que_comprar
+  examples: |
+    - que le gustaria comprar?
+    - que quieres comprar?
+    - que deseas comprar?
+    - Que le gustaria comprar? \ningrese la cantidad de producto que necesita seguido del producto que desea comprar.
+
+- intent: nuevo_mpago
+  examples: |
+    - que metodo de pago desea utilizar para realizar la compra?
+    - que metodo de pago desea utilizar?
+    - digame que metodo de pago desea utilizar para realizar la compra
+    - digame que metodo de pago desea utilizar para realizar la compra, por favor
+    - Con que metodo de pago le gustaria finalizar su compra?
+
+- intent: viejo_mpago
+  examples: |
+    - parece que ya has comprado usando tarjeta de credito, te gustaria volver a comprar de la misma forma?
+    - parece que ya has comprado usando paypal, te gustaria volver a comprar de la misma forma?
+    - te gustaria volver a comprar de la misma forma?
+    - te gustaria usar el mismo metodo de pago?
+
+- intent: solicitar_compra
+  examples: |
+    - me gustaria hacer un pedido
+    - quiero hacer un pedido
+
+- intent: carrito
+  examples: |
+    - quiero  2 [mayonesa helmanns](producto), 3 [sopa knorr](producto)
+    - quiero  1 [fideos matarazzo](producto), 2 [papel higienico scott]](producto)
+    - quiero  1 [fideo matarazzo](producto), 2 [papel higienico scott](producto), 2 [mayonesa helmanns](producto) y 3 [sopa knorr](producto)
+
+- intent: accion_completada
+  examples: |
+    - ingrese al siguiente link y complete el formulario con sus datos para completar la compra
+    - muchas gracias por su compra
+    - el numero de pedido es
+    - costo de envio
+    - valor total
+    - estas son tus compras
+    - estas son tus compras con sus respectivas fechas de entrega
+    - Los horarios de atencion al cliente son
+    - Los horarios de atencion al cliente son de 8:00 a 17:00\nSi quieres contactarte con nosotros, nuestro numero de telefono es: 0-800-rasahelp
+
+- intent: rellenar_stock
+  examples: |
+    - podrias rellenar el stock?
+    - rellena el stock
+    - conectate con el mayorista
+    - contectate con el otro bot

@@ -1,0 +1,63 @@
+version: "2.0"
+
+rules:
+
+- rule: Chau chau
+  condition:
+    - slot_was_set:
+      - usuario: true
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: ya he iniciado sesion?
+  condition:
+    - slot_was_set:
+      - usuario: true
+  steps:
+  - intent: login_req
+  - action: utter_loggeado
+
+- rule: despedida_anonima
+  steps:
+  - intent: despedirse
+  - action: utter_despedida_anonima
+
+- rule: sesion no iniciada
+  steps:
+  - intent: login_req
+  - action: utter_nologgeado
+
+- rule: usuario_feliz
+  condition:
+    - slot_was_set:
+      - usuario: true
+  steps:
+  - intent: felicidad
+  - action: utter_feliz
+
+- rule: feliz_anonimo
+  steps:
+  - intent: felicidad
+  - action: utter_feliz_anonimo
+
+- rule: usuario_feliz
+  condition:
+    - slot_was_set:
+      - usuario: true
+  steps:
+  - intent: enojo
+  - action: utter_calmar_usuario
+
+- rule: feliz_anonimo
+  steps:
+  - intent: enojo
+  - action: utter_calmar_anonimo
+
+#- rule: compra no iniciado sesion
+#  condition:
+#    - slot_was_set:
+#      - usuario: null
+#  steps:
+#  - intent: pedidos
+#  - action: utter_nologgeado
